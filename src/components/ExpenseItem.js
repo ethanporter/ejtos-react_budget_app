@@ -30,11 +30,11 @@ const ExpenseItem = (props) => {
     const decreaseAllocation = (name) => {
         const expense = {
             name: name,
-            cost: 10,
+            cost: -10,
         };
 
         dispatch({
-            type: 'REDUCE_EXPENSE',
+            type: 'ADD_EXPENSE',
             payload: expense
         });
 
@@ -50,7 +50,7 @@ const ExpenseItem = (props) => {
                 color:'white', 
                 fontSize:25, 
                 fontWeight:'bold',  
-                backgroundColor:'green,', 
+                backgroundColor:'green', 
                 height:35, 
                 width:35, 
                 borderRadius:100, 
@@ -61,9 +61,9 @@ const ExpenseItem = (props) => {
                 fontSize:25,  
                 fontWeight:'bold',
                 backgroundColor:'red', 
-                height:40, 
-                width:40, 
-                borderRadius:100, 
+                height:35, 
+                width:35, 
+                borderRadius:100,
                 }}>-</button></td>
         <td><TiDelete size='1.5em' onClick={handleDeleteExpense}></TiDelete></td>
         </tr>
