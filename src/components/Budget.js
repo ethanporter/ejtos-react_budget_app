@@ -29,7 +29,7 @@ const Budget = () => {
 
     return (
         <div className='alert alert-secondary'>
-            <p>Budget: £           
+            <span>Budget: £           
                 <input
                     required='required'
                     type='number'
@@ -43,7 +43,7 @@ const Budget = () => {
                 Save
             </button>
             
-            </p>
+            </span>
         </div>
     );
 };

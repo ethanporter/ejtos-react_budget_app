@@ -8,14 +8,13 @@ const Currency = () => {
     return (
         <div className="input-group mb-3" style={{ marginRight: '2rem' }}>
                 <div className="input-group-prepend">
-                <label className="input-group-text" htmlFor="inputGroupSelect01">Currency</label>
                 </div>
-                  <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
-                        <option defaultValue>Choose...</option>
-                        <option value="Dollar" name="dollar">$ Dollar</option>
-                <option value="Pound" name="pound">£ Pound</option>
-                <option value="Euro" name="euro">€ Euro</option>
-                <option value="Ruppee" name="ruppee">₹ Ruppee</option>
+                  <select style={{backgroundColor:'lightgreen', color:'white', border:'none', borderRadius:10, padding:10,}} id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
+                        <option defaultValue>Currency (£ Pound)</option>
+                        <option value="Dollar" name="dollar">Currency $ Dollar</option>
+                        <option value="Pound" name="pound">Currency £ Pound</option>
+                        <option value="Euro" name="euro">Currency € Euro</option>
+                        <option value="Ruppee" name="ruppee">Currency ₹ Ruppee</option>
                 </select>
             </div>
     );
