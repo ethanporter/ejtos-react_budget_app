@@ -5,7 +5,7 @@ import { AppContext } from '../context/AppContext';
 //creating a variable to store the CSS classname you want to display, using a template string to create your classes, and rendering 
 //the remaining budget using a subtraction.
 const Remaining = () => {
-    const { expenses, budget } = useContext(AppContext);
+    const { expenses, budget, currency } = useContext(AppContext);
 
     const totalExpenses = expenses.reduce((total, item) => {
         return (total = total + item.cost);
@@ -15,7 +15,7 @@ const Remaining = () => {
 
     return (
         <div className={`alert ${alertType}`}>
-            <span>Remaining: £{budget - totalExpenses}</span>
+            <span>Remaining: {currency}{budget - totalExpenses}</span>
         </div>
     );
 };

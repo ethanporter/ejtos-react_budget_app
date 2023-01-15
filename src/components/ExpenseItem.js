@@ -5,7 +5,7 @@ import { AppContext } from '../context/AppContext';
 //Here, you are dispatching an action. Your action contains the type (so the reducer knows how to update the state) and the payload. 
 //In this case you are passing the ID of this expense (which you get from props when you rendered the ExpenseList).
 const ExpenseItem = (props) => {
-    const { dispatch } = useContext(AppContext);
+    const { dispatch, currency } = useContext(AppContext);
 
     const handleDeleteExpense = () => {
         dispatch({
@@ -44,7 +44,7 @@ const ExpenseItem = (props) => {
     return (
         <tr>
         <td>{props.name}</td>
-        <td>£{props.cost}</td>
+        <td>{currency}{props.cost}</td>
         <td><button onClick={event=> increaseAllocation(props.name)}
             style={{ 
                 color:'white',

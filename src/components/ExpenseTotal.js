@@ -5,7 +5,7 @@ import { AppContext } from '../context/AppContext';
 //Now whenever the user adds an expense, this causes the state to update, which will cause all components connected to the context to re-render 
 //and update themselves with new values.
 const ExpenseTotal = () => {
-    const { expenses } = useContext(AppContext);
+    const { expenses, currency } = useContext(AppContext);
 
     const totalExpenses = expenses.reduce((total, item) => {
         return (total += item.cost);
@@ -13,7 +13,7 @@ const ExpenseTotal = () => {
 
     return (
         <div className='alert alert-primary'>
-            <span>Spent so far: £{totalExpenses}</span>
+            <span>Spent so far: {currency}{totalExpenses}</span>
         </div>
     );
 };

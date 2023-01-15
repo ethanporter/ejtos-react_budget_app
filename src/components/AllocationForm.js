@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 //Here, you are adding form tags, adding a label/input for name, cost and action field, and adding values for various departments.
 const AllocationForm = (props) => {
-    const { dispatch,remaining  } = useContext(AppContext);
+    const { dispatch, remaining, currency } = useContext(AppContext);
 
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
@@ -61,7 +61,7 @@ const AllocationForm = (props) => {
                   </select>
                     <div >
                     <span style={{ marginLeft: '2rem' }}>
-                        £
+                        {currency}
                         <input
                             required='required'
                             type='number'
