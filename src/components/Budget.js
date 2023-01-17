@@ -4,19 +4,19 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 //Here, you are using the Bootstrap Alert classes to give a nice gray background by adding some text and hard coding a value.
 const Budget = () => {
-    const { budget, dispatch, currency, expenses } = useContext(AppContext);
+    const { budget, dispatch, currency, expenses, remaining } = useContext(AppContext);
 
     const totalExpenses = expenses.reduce((total, item) => {
         return (total += item.cost);
     }, 0); 
 
     const updateBudget = (newBudget) => {
-        if(budget > 20000) {
-            alert("The budget cannot be more than 20,000");
+        if(budget > 1000000) {
+            alert("The budget cannot be more than "+currency+ "1,000,000");
             return;
         }
         if (budget < totalExpenses) {
-            alert("The budget cannot be less than the total spent already");
+            alert("The budget cannot be less than "+currency+remaining);
            return;
         }
         dispatch({

@@ -20,6 +20,7 @@ const Currency = () => {
                 <option value="$" name="dollar">Currency $ Dollar</option>
                 <option value="€" name="euro">Currency € Euro</option>
                 <option value="₹" name="ruppee">Currency ₹ Ruppee</option>
+                <option value="¥" name="yen">Currency ¥ Yen</option>
             </select>
         </div>
     );
